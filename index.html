@@ -1,36 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tic Tac Toe</title>
-  <link rel="stylesheet" href="./styles.css">
-</head>
-<body>
-  <header>
-    <h1>Tic Tac Toe</h1>
-  </header>
-  <main>
-    <div class="button-container">
-      <button>Single player</button>
-      <button>Two players</button>
-    </div>
-    <div class="board">
-      <div id="A1">X</div>
-      <div id="B1">O</div>
-      <div id="C1">O</div>
-      <div id="A2">X</div>
-      <div id="B2">O</div>
-      <div id="C2">X</div>
-      <div id="A3">X</div>
-      <div id="B3">O</div>
-      <div id="C3">X</div>
-    </div>
-  </main>
-  <footer>
-    <button>Restart</button>
-  </footer>
-  <script src="./script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Tic Tac Toe</h1>
+    </header>
+    <main>
+      <nav class="nav">
+        <button id="nav__button-single-player">Single player</button>
+        <button id="nav__button-two-players">Two players</button>
+      </nav>
+      <section class="game-display">
+        <div class="names-board"></div>
+        <div class="game-board">
+          <div id="game-board__A1"></div>
+          <div id="game-board__B1"></div>
+          <div id="game-board__C1"></div>
+          <div id="game-board__A2"></div>
+          <div id="game-board__B2"></div>
+          <div id="game-board__C2"></div>
+          <div id="game-board__A3"></div>
+          <div id="game-board__B3"></div>
+          <div id="game-board__C3"></div>
+        </div>
+      </section>
+      <div class="players-name-form">
+        <h2>Enter Players Names</h2>
+        <label for="player-name-X">Player X</label>
+        <input type="text" id="player-name-X" placeholder="Player X Name" />
+        <label for="player-name-O">Player O</label>
+        <input type="text" id="player-name-O" placeholder="Player O Name" />
+        <button id="players-name-form__button-submit">Start Game</button>
+      </div>
+    </main>
+    <footer>
+      <button id="button-new-game">New Game</button>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
 </html>
