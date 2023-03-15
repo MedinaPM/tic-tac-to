@@ -114,6 +114,17 @@ const gameController = (() => {
     gameBoard.newBoard();
   };
 
+  const printGameResults = (winner, loser) => {
+    gameBoard.clearPlayerNames();
+    const container = document.querySelector(".names-board");
+    const contentW = document.createElement("p");
+    contentW.textContent = `${winner} wins!`;
+    container.appendChild(contentW);
+    const contentL = document.createElement("p");
+    contentL.textContent = `${loser} lose!`;
+    container.appendChild(contentL);
+  };
+
   const checkIfGameIsOver = () => {
     const GB0 = gameBoard.gameBoardMoves[0];
     const GB1 = gameBoard.gameBoardMoves[1];
@@ -135,7 +146,7 @@ const gameController = (() => {
       (GB0 === "X" && GB4 === "X" && GB8 === "X") ||
       (GB2 === "X" && GB4 === "X" && GB6 === "X")
     ) {
-      console.log(`${playerX.getPlayerName()} wins!`);
+      printGameResults(playerX.getPlayerName(), playerO.getPlayerName());
     } else if (
       (GB0 === "O" && GB1 === "O" && GB2 === "O") ||
       (GB3 === "O" && GB4 === "O" && GB5 === "O") ||
@@ -146,7 +157,7 @@ const gameController = (() => {
       (GB0 === "O" && GB4 === "O" && GB8 === "O") ||
       (GB2 === "O" && GB4 === "O" && GB6 === "O")
     ) {
-      console.log(`${playerO.getPlayerName()} wins!`);
+      printGameResults(playerO.getPlayerName(), playerX.getPlayerName());
     } else if (
       !(GB0 === "") &&
       !(GB1 === "") &&
@@ -158,7 +169,13 @@ const gameController = (() => {
       !(GB7 === "") &&
       !(GB8 === "")
     ) {
-      console.log("Tie!");
+      gameBoard.clearPlayerNames();
+      const nameX = playerX.getPlayerName();
+      const nameO = playerO.getPlayerName();
+      const container = document.querySelector(".names-board");
+      const content = document.createElement("p");
+      content.textContent = `${nameX} and ${nameO} tied the game!`;
+      container.appendChild(content);
     }
   };
 
